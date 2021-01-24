@@ -1,190 +1,302 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
 }
-.ml3 {
-    font-weight: 900;
-    font-size: 3.5em;
-    color: #584366;
+
+.lds-roller {
+    
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    font-family: var(--heading-font) !important;
+    width: 80px;
+    height: 80px;
   }
-  #loading-screen {
-      height: 100%;
-      width: 100%;
-      position: fixed;
-      z-index: 10000;
-      background-color: #DAA620;
+  .lds-roller div {
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: 40px 40px;
+  }
+  .lds-roller div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #fff;
+    margin: -4px 0 0 -4px;
+  }
+  .lds-roller div:nth-child(1) {
+    animation-delay: -0.036s;
+  }
+  .lds-roller div:nth-child(1):after {
+    top: 63px;
+    left: 63px;
+  }
+  .lds-roller div:nth-child(2) {
+    animation-delay: -0.072s;
+  }
+  .lds-roller div:nth-child(2):after {
+    top: 68px;
+    left: 56px;
+  }
+  .lds-roller div:nth-child(3) {
+    animation-delay: -0.108s;
+  }
+  .lds-roller div:nth-child(3):after {
+    top: 71px;
+    left: 48px;
+  }
+  .lds-roller div:nth-child(4) {
+    animation-delay: -0.144s;
+  }
+  .lds-roller div:nth-child(4):after {
+    top: 72px;
+    left: 40px;
+  }
+  .lds-roller div:nth-child(5) {
+    animation-delay: -0.18s;
+  }
+  .lds-roller div:nth-child(5):after {
+    top: 71px;
+    left: 32px;
+  }
+  .lds-roller div:nth-child(6) {
+    animation-delay: -0.216s;
+  }
+  .lds-roller div:nth-child(6):after {
+    top: 68px;
+    left: 24px;
+  }
+  .lds-roller div:nth-child(7) {
+    animation-delay: -0.252s;
+  }
+  .lds-roller div:nth-child(7):after {
+    top: 63px;
+    left: 17px;
+  }
+  .lds-roller div:nth-child(8) {
+    animation-delay: -0.288s;
+  }
+  .lds-roller div:nth-child(8):after {
+    top: 56px;
+    left: 12px;
+  }
+  @keyframes lds-roller {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+.ld-animation {
+  display: none;
+  
+}
 
-  }
+
+#loading-screen {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 10000;
+    background-color: var(--secondary-color);
+
+}
+
 :root {
     --heading-font: 'Cormorant Garamond', serif;
     --para-font: 'Raleway', sans-serif;
-    
+    --primary-color:#fad3ce;
+    --secondary-color:#2a4c4e;
+  
+
 }
+
 .navbar-brand {
     font-family: var(--heading-font) !important;
-    color: #584366 !important;
+    color: var(--primary-color) !important;
+
     font-weight: bold;
 }
-body{
+
+body {
     height: 200vh;
 }
+
 #navbar {
-    background-color:#DAA620;
-    
+    background-color: var(--secondary-color); 
     position: fixed;
     z-index: 10;
     width: 100%;
     font-family: var(--heading-font) !important;
-   
-}
-html{
-    scroll-behavior: smooth;
-}
-.navbar-nav a{
-    color: #584366 !important;
-    font-size:1.2rem;
+
 }
 
-#bgImage{
-    background-image:url(Assests/images/bg2.jpg);
-   
-    height: 500px; 
-    
-    background-repeat: no-repeat ;
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar-nav a {
+    color: var(--primary-color) !important;
+    font-size: 1.2rem;
+}
+
+#bgImage {
+    background-image: url(Assests/images/one.png);
+
+    height: 600px;
+
+    background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
 }
 
 .intro {
-    margin-top:auto;
+    margin-top: auto;
     padding: 10px;
 }
+
 .intro h1 {
-    margin-top:9rem;
+    margin-top: 9rem;
     font-family: var(--heading-font) !important;
-    color: #584366;
+    color: var(--primary-color) !important;
     font-weight: bold;
     letter-spacing: 3px;
+    font-size: 3rem;
 }
+
 .btn {
     height: 2.5rem;
     width: 7rem;
+    font-weight: bold;
     color: #fff;
-    background-color: #584366;
+    background-color: var(--secondary-color);
     outline: none;
     border: none;
 
 }
-.btn:hover {
-    border: 2px solid #584366;
-    background-color: transparent;
-    color: #584366;
-}
+
+
 
 .intro p {
-    --para-font: 'Raleway', sans-serif;
-    color: #58440f;
+    font-family: var(--para-font);
+    color:#fff;
     font-weight: bold;
-    
+
 }
-#about{
+
+#about {
     text-align: center;
     margin-top: 2rem;
 }
-#about h2{
+
+#about h2 {
     margin-top: 1rem;
     font-family: var(--heading-font) !important;
-    color: #584366;
+    color: var(--secondary-color);
     font-weight: bold;
     font-size: 3rem;
     letter-spacing: 1px;
-    
+
 }
+
 #about p {
-    color: #58440f;
+   
     font-weight: bold;
 }
+
 .corousel-container {
-    border: 3px dotted #584366;
+    border: 3px dotted ;
     padding: 3px;
 }
-#new-collection{
-    margin-top:3rem ;
-    text-align:center
+
+#new-collection {
+    margin-top: 3rem;
+    text-align: center
 }
+
 #new-collection h2 {
     margin-top: 1rem;
     font-family: var(--heading-font) !important;
-    color: #584366;
+    color: var(--secondary-color);
+
     font-weight: bolder;
     font-size: 2rem;
     letter-spacing: 1px;
 }
+
 #new-collection p {
-    color: #58440f;
+    
     font-weight: bold;
     font-size: 1;
 }
+
 #cards {
     text-align: center;
 }
+
 #cards h2 {
     margin-top: 1.5rem;
     font-family: var(--heading-font) !important;
-    color: #584366;
+    color: var(--secondary-color);
+
     font-weight: bolder;
     font-size: 2rem;
     letter-spacing: 1px;
 }
-.card{
+
+.card {
     border: none;
     text-align: left;
-    
+
 }
+
 .card-title {
-    
+
     font-family: var(--heading-font) !important;
-    color: #584366;
+    color: var(--secondary-color);
+
     font-weight: bold;
     text-transform: uppercase;
     font-size: 1.4rem;
-    
+
 }
+
 .card-img-top {
     width: 100% !important;
     border-radius: 1rem;
 }
+
 #footer {
     height: auto;
-    background-color: #DAA620;
+    background-color: var(--secondary-color);
+  
 }
+
 #footer h3 {
     margin-top: 1rem;
     font-family: var(--heading-font) !important;
-    color: #584366;
+    color: var(--primary-color);
+margin-top: 1rem;
     font-weight: bolder;
     font-size: 2rem;
-    
+
 }
-#footer p{
+
+#footer p {
     color: #fff;
     font-family: var(--para-font) !important;
     font-size: 1;
 }
+
 #footer i {
-    color: #584366; 
+ color: #fff;
     margin: 0.7rem;
     font-size: 1.4rem;
 }
-
-
-
-
-
+.form-text {color: #fff; font-family: var(--para-font);}
